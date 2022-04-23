@@ -1,8 +1,10 @@
+// import Carros from './Carro';
 const Carro = require('./Carro');
 
 let punto1 = new Carro();
 punto1.cor = "amarelo";
 punto1.acelear();
+console.log(punto1.nRodas);
 console.log(punto1.cor);
 console.log(punto1.velocidade);
 

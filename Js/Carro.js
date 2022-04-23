@@ -2,9 +2,18 @@ class Carro{
     modelo="";
     placa="";
     velocidade=0;
+    #noRodas = 4;
 
-    acelear() {       
-            this.velocidade += 10;       
+    constructor(){
+        this.modelo = "Ford Ka";
+        console.log("Construtor");
+    }
+    
+
+    acelerar() {       
+            this.velocidade += 10; 
+            // this.#noRodas = 6;    
+            // console.log(this.#noRodas);  
     }
 
     freiar(){
