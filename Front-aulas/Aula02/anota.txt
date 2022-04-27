@@ -1,0 +1,29 @@
+1- por padrão a div ocupará sempre sempre 100% do espaço da largura da janela -
+Esse é um padrão para elementos chamados BLOCK
+2- Valores definidos em px são fixos - NUNCA MUDAM -
+3- Valores definidos em % têm uma relação com o tamanho do elemento PAI(Onde ele está inserido)
+4- Altura - Caso você não defina uma altura. o padrão para sua definição é auto -
+conforme vc insere conteúdo ele aumenta
+
+Seletor de Class - USAR SEMPRE
+criar uma regra, essa regra receberá um nome,
+Esse nome será por qualquer elemento da página.
+FORMATAÇÃO PADRÃO - REPETIDA
+.nome da class {
+propriedade: valor;
+}
+
+Na tag HTML, usar o atributo global class
+<div class="nome da class"></div>
+
+Seletor de ID - EVITAR USAR
+você pode usar o atributo id (identificador) para
+criar formatações em CSS
+#nome do id {
+propriedade: valor;
+}
+
+Na tag HTML, usar o atributo global id
+<div id="nome id"></div>
+ID NÃO PODE SER REPETIDO NA PÁGINA HTML
+Você não deve ter dois ou mais elementos com o mesmo ID
