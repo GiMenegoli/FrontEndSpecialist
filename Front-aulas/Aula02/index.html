@@ -1,32 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Place</title>
-    <!-- reset css  -->
-    <!-- <link rel="stylesheet" href="./assets/css/conceito.css"> -->
-
-    <!-- linkar css  -->
+    <title>MyPlace</title> 
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+        <!-- linkar a CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <!-- header da pagina com logo e menu -->
-    <div class="header">
-        <h1 class="header-title">MyPlace</h1>
-        <nav class="header-menu">
-            <ul>
-                <li><a href="">Link</a></li>
-                <li><a href="">Link</a></li>
-                <li><a href="">Link</a></li>
-                <li><a href="">Link</a></li>
-            </ul>
-        </nav>
-    </div>
-    <!-- header da pagina com logo e menu -->
+    <!-- header da página com logo e menu -->
+    <nav class="nav-bar">
+        <h2 class="logo">MyPlace</h2>
+        <ul class="nav-menu">
+            <li><a href="">Tours</a></li>
+            <li><a href="">Explore</a></li>
+            <li><a href="">Eventos</a></li>
+            <li><a href="" class="btn">Contato</a></li>
+        </ul> 
+        <!-- ícone do menu sanduíche --> 
+        <i class="fa-solid fa-bars menu-btn"></i>
+    </nav>
 
+    <header class="header">
+        <div class="header-content">
+            <h2>O MyPlace é exatamente assim...</h2>
+            <h3>Simplemente maravilhoso!</h3>
+            <a href="" class="btn">Mais informações</a>
+        </div>
+    </header>
+    <!-- fim menu header -->
+
+    <!-- Tours -->
+    <section class="tour">
+        <div class="tour-title">
+            <h2>Faça um tour pelas montanhas</h2>
+            <div class="line"></div>
+        </div>
+
+    </section>
+
+    <!-- Fim Tours -->
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/scroll.js"></script>
 </body>
 
 </html>

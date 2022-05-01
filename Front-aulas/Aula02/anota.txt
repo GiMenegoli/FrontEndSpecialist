@@ -27,3 +27,8 @@ Na tag HTML, usar o atributo global id
 <div id="nome id"></div>
 ID NÃO PODE SER REPETIDO NA PÁGINA HTML
 Você não deve ter dois ou mais elementos com o mesmo ID
+
+
+variáveis:
+define o root - dentro dele nome da variável e valor a receber
+--nome da variável: valor;
