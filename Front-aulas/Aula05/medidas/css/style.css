@@ -1,0 +1,50 @@
+/* Por padrão o tamanho da fonte é de 16px
+    Usando EM
+    Medida relativa - Usar o tamanho definido da fonte do elemento pai
+    pai : { font-size: 30px;}
+    filho: {font-size: 2em;} 2 * 30 =60px    
+    
+    .caixa {
+        font-size: 40px;
+    }
+    
+    .box {
+        font-size: 15px;
+    }
+    
+    h2 {
+        font-size: 3em;
+    }
+    
+    p{
+        font-size: 2em;
+    }
+    */
+
+
+    /* rem - root - pegar o tamanho do elemento root (html) 
+     pai : { font-size: 20px;}
+    filho: {font-size: 2rem;} 2 * 20 =40px 
+    1rem = 16px = padrão do navegador
+        */
+        html {
+            /* 62,5% são exatamente 10px de 16px  ==> (10/16) */
+            font-size: 62.5%
+        }
+    
+        body {
+            font-size: 1.6rem;
+        }
+    
+        h2 {
+            font-size: 5rem;
+            border: 1px solid #000;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            background-color: #f60;
+            margin-bottom: 2rem;
+        }
+    
+        p {
+            font-size: 2rem;
+        }
