@@ -3,5 +3,13 @@
     font-size: 28px;
     color: #ed145b;
   }
+
+  .itemClass {
+    text-align: center;
+    cursor: pointer;
+  }
   
+  .text{
+    text-align: center;
+  }
   
