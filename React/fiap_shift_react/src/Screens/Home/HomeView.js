@@ -1,46 +1,41 @@
 import * as React from 'react';
 import './Home.css'
-import { Box, Container, CircularProgress, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
+import Header from '../../Components/Header/Header';
 
-export default function HomeView({ loading, arrayToys, goToPage }) {
+import ToysTableView from '../../Components/ToysTableView/ToysTableView';
+import ToysCardsView from '../../Components/ToysCardsView/ToysCardsView';
+import ToysTopList from '../../Components/ToysTopList/ToysTopList';
+import renderIf from 'render-if';
 
-    let name = "";
-    let infoBox = [];
+export default function HomeView({ loading, arrayToys, goToPage, info, getDataPage, viewType, onChangeViewType, addToy }) {
 
-    if (loading){
-        infoBox.push(
-            <Grid key={1} item lg={12} xl={12} className="itemClass">
-                <CircularProgress />
-            </Grid>            
-            
-        )
-    } else  if (arrayToys) {
-        arrayToys.toys.forEach(toy => {
-            infoBox.push(
-                <Grid key={toy._id} item lg={12} xl={12} className="itemClass">
-                    <Typography gutterBottom variant="body" className="text" onClick={() => goToPage(toy)}>
-                        Info {toy.name}
-                    </Typography>
-                </Grid>
-            )
-        });
-    }
     return (
         <Container fixed className="container" maxWidth="lg">
+            <Header />
             <Box className="contentBox">
-            <Grid
-                container
-                spacing={0}
-                direction="row">
-                    <Grid item lg={12} xl={12} >
-                        <Typography gutterBottom variant="h1" className="text">
-                            Base de Brinquedos {name}
+                <Grid
+                    container
+                    spacing={3}
+                    alignItems="center"                    
+                    >
+                    <Grid item lg={12} xl={12} className="titlePage">
+                        <Typography  variant="h1" >
+                            Base de Brinquedos - {info}
                         </Typography>
                     </Grid>
-                    {infoBox}
+                    <ToysTopList onChangeView={onChangeViewType} viewType={viewType} addToy={addToy}/>
 
-            </Grid>
-            </Box>            
+                    <Grid item lg={12} xl={12} >
+                        {renderIf(viewType === "cards")(
+                            <ToysCardsView loading={loading} arrayToys={arrayToys} goToPage={goToPage} />
+                        )}
+                        {renderIf(viewType === "table")(
+                            <ToysTableView loading={loading} goToPage={goToPage} getDataPage={getDataPage} />
+                        )}
+                    </Grid>                    
+                </Grid>
+            </Box>
         </Container>
     );
 }

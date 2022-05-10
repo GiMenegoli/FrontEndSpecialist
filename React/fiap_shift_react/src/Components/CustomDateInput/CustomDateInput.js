@@ -13,9 +13,10 @@ import DatePicker from '@mui/lab/DatePicker';
 import { ptBR } from 'date-fns/locale'
 import InputAdornment from '@mui/material/InputAdornment';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import PropTypes from 'prop-types';
 
-const BootstrapInput = styled(InputBase)(({ theme, error }) => {
-
+const BootstrapInput = styled(InputBase)(({ theme, error }) => { 
+    
     let borderNormal = '1px solid ' + Colors.NeutralMedium
     let borderFocused = '2px solid ' + Colors.SecondaryMedium
     if (error) {
@@ -54,14 +55,15 @@ const CustomDateInput = ({ label, errorMessage, onChange, value, placeholder, ha
     const [open, setOpen] = useState(false);
 
     const onClickCalendar = () => {
-        if (!disabled) {
+        if(!disabled){
             setOpen((open) => !open)
         }
-
+        
     }
+
     let colorLabel = "";
-    if (hasError) {
-        colorLabel = "error";
+    if (hasError){
+        colorLabel="error";
     }
 
     return (
@@ -78,19 +80,29 @@ const CustomDateInput = ({ label, errorMessage, onChange, value, placeholder, ha
                             onChange(newValue);
                         }}
                         placeholder={placeholder}
-                        disabled={disabled}
+                        disabled={disabled}                        
                         open={open}
                         renderInput={(params) => <BootstrapInput {...params} error={hasError}
                             endAdornment={
-                                <InputAdornment position="end" onClick={onClickCalendar} sx={{ cursor: 'pointer' }}>
-                                    <CalendarMonthIcon />
-                                </InputAdornment>
-                            } />}
+                                <InputAdornment position="end" onClick={onClickCalendar} sx={{cursor: 'pointer'}}>
+                                <CalendarMonthIcon />
+                            </InputAdornment>
+                        }/>}
                     />
                 </LocalizationProvider>
                 <Typography variant="minSize" color={colorLabel} className="labelMessageCustomInput">{errorMessage}</Typography>
             </FormControl>
         </div>
     );
+};
+
+CustomDateInput.propTypes = {
+    label: PropTypes.string,
+    errorMessage: PropTypes.string,
+    value: PropTypes.string,
+    placeholder: PropTypes.string,
+    disabled: PropTypes.bool,
+    hasError: PropTypes.bool.isRequired,
+    onChange: PropTypes.func.isRequired,
 };
 export default CustomDateInput;

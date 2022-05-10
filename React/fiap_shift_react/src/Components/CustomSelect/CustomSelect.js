@@ -7,14 +7,15 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Sizes from '../../Utils/Common/Sizes';
 import Colors from '../../Utils/Common/Colors';
+import PropTypes from 'prop-types';
 
 const CustomSelect = ({ label, errorMessage, value, placeholder, hasError, onChange, list, disabled }) => {
 
     let colorLabel = "neutral";
     let borderNormal = '1px solid ' + Colors.NeutralMedium
-    if (hasError) {
-        colorLabel = "error";
-        borderNormal = '1px solid ' + Colors.Error
+    if (hasError){
+        colorLabel="error";
+        borderNormal = '1px solid ' + Colors.Error 
     }
 
 
@@ -34,11 +35,11 @@ const CustomSelect = ({ label, errorMessage, value, placeholder, hasError, onCha
             width: '100%',
             padding: '10px 12px',
         },
-    }));
+    }));    
 
 
     return (
-        <div className='boxCustomSelect'>
+        <div className='boxCustomSelect'>            
             <FormControl >
                 <InputLabel shrink error={hasError} color={colorLabel}>{label}</InputLabel>
                 <Select
@@ -62,20 +63,34 @@ const CustomSelect = ({ label, errorMessage, value, placeholder, hasError, onCha
                             if (element.value === value) {
                                 valueText = element.label;
                             }
-                        });
+                        });                        
                         return valueText;
-                    }}
+                    }}                    
                 >
                     {list.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
                             {option.label}
                         </MenuItem>
-                    ))}
+                    ))}                    
                 </Select>
                 <Typography variant="minSize" color={colorLabel} htmlFor="bootstrap-input" className="labelMessageCustomInput">{errorMessage}</Typography>
             </FormControl>
         </div>
     );
+};
+
+CustomSelect.propTypes = {
+    label: PropTypes.string, 
+    errorMessage: PropTypes.string, 
+    value: PropTypes.string, 
+    placeholder: PropTypes.string.isRequired,
+    hasError: PropTypes.bool.isRequired,
+    disabled: PropTypes.bool,
+    onChange: PropTypes.func.isRequired,
+    list: PropTypes.arrayOf(PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        value: PropTypes.number.isRequired
+    })),    
 };
 
 export default CustomSelect;
