@@ -1,0 +1,25 @@
+formulário == dados
+<form> COMPONENTES </form>
+dentro da tag form alguns atributos importantes:
+
+id = identificador == mesmo valor do name
+name = nome == mesmo valor do id
+
+method = forma como os dados serão enviados - 2 formas
+get ==> método padrão = Dados são enviados na barra de url == usado em pesquisa links dinâmicos
+post ==> Dados são enviados no corpo dos  campos (encapsulados)  == usado contato - cadastro - compra
+
+action = o que acontecerá com os dados quando o form for enviado == ENDEREÇO DE ALGUÉM QUE CONSEGUE
+RECUPERAR OS DADOS DIGITADOS E FAZER O SEU DEVIDO USO
+
+Campos do formulário: 97% dos campos são inseridos através
+da tag <input type="tipo de campo que vc deseja inserir" + atributos>
+select - textarea - button - datalist são tags próprias
+
+label víncula um texto a um determinado campo pelo id do campo
+
+Anotação Aula 06
+
+
+
+
