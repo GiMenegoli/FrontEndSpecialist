@@ -1,0 +1,12 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.carousel-inner, 
+.carousel-item {
+    max-height: 80vh;
+}
